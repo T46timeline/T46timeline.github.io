@@ -1,0 +1,208 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ChronoFlow Timeline Export</title>
+      
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  :root {
+    --background: #F5EEFE;
+    --foreground: #2C1B47;
+    --card: #FFFFFF;
+    --primary: #9D4EDD;
+    --border: #E0D7F0;
+    --muted-foreground: #7E6A9A;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 2rem;
+  }
+  .timeline-container {
+    position: relative;
+    max-width: 50rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(157, 78, 221, 0.2);
+    transform: translateX(-50%);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-start;
+  }
+  .timeline-item:nth-child(odd) .item-content { order: 1; padding-left: 2rem; }
+  .timeline-item:nth-child(even) .item-content { order: 2; padding-right: 2rem; }
+  .timeline-item:nth-child(odd) .item-spacer { order: 2; }
+  .timeline-item:nth-child(even) .item-spacer { order: 1; }
+  .item-spacer { width: 50%; }
+  .item-content { width: 50%; }
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 1.5rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 4px solid var(--background);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+  }
+  .card-header { padding: 1.5rem; }
+  .card-content { padding: 0 1.5rem 1.5rem; }
+  .card-title { font-size: 1.25rem; font-weight: 600; margin: 0; }
+  .card-date { display: flex; align-items: center; color: var(--muted-foreground); margin-top: 0.5rem; font-size: 0.875rem; }
+  .card-date svg { width: 1rem; height: 1rem; margin-right: 0.5rem; }
+  .card-description { font-size: 0.875rem; color: var(--muted-foreground); margin: 0; }
+  @media (max-width: 768px) {
+    .timeline-line { left: 1rem; }
+    .timeline-dot { left: 1rem; }
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      flex-direction: column;
+    }
+    .item-content, .item-spacer { width: 100%; order: 1 !important; padding: 0 0 0 3rem !important; }
+  }
+</style>
+
+    </head>
+    <body>
+      <h1 style="text-align: center; color: var(--primary); font-size: 2rem; margin-bottom: 3rem;">Timeline</h1>
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Gatow Airport Trip and Hike</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Aug 31, 2025
+      </p>
+    </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">JFKS Info Fair</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Sep 3, 2025
+      </p>
+    </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Troop meeting with Troop Elections</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Sep 9, 2025
+      </p>
+    </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Overnight at Church</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Sep 19 - Sep 20, 2025
+      </p>
+    </div>
+    
+      <div class="card-content">
+        <p class="card-description">Sleepover at the church (main meeting place)</p>
+      </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">JFKS Fun Day</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Sep 20, 2025
+      </p>
+    </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+    <div class="timeline-item">
+        <div class="item-spacer"></div>
+        <div class="item-content">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Fall Hiking Trip</h3>
+      <p class="card-date">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Oct 3 - Oct 5, 2025
+      </p>
+    </div>
+    
+      <div class="card-content">
+        <p class="card-description">2 day hiking trip in the Brocken at a youth hostel</p>
+      </div>
+    
+  </div>
+</div>
+        <div class="timeline-dot"></div>
+    </div>
+  
+      </div>
+    </body>
+    </html>
+  
